@@ -12,6 +12,8 @@ import '../../app/globals.css';
 export const QuestionsCard = ({data, sendDataToParent}: {data: Question[], sendDataToParent: (quizdata: {count: number, result: boolean[]}) => void }) => {
     const [quizdata, setQuizData] = useState<{count: number, result: boolean[]}>({count: 0, result: []});
     function handleClick(event: { currentTarget: { innerText: string; }; }) {
+        console.log(data[quizdata.count].correct_answer.toLowerCase());
+        
         quizdata.result.push(event.currentTarget.innerText.toLowerCase() === data[quizdata.count].correct_answer.toLowerCase());
         setQuizData({count: quizdata.count+1, result: quizdata.result});
         sendDataToParent(quizdata);
