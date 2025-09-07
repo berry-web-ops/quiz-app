@@ -34,19 +34,19 @@ export const ResultsCard = ({result, sendDataToParent}:{result: boolean[], sendD
       <div className='flex object-center place-self-center place-content-center items-center'>
         <Card className='flex flex-col absolute inset-0 place-self-center w-1/3 h-1/2 text-sm p-1em justify-items-center place-content-center items-center self-center'>
         <CardContent>
-        <Typography gutterBottom variant="h4" component="div">
+        <Typography gutterBottom variant="h4" component="div" className='text-gray-600 font-bold text-4xl'>
         Your score: {score}
         </Typography>
         </CardContent>
         <CardActions disableSpacing>
-            <Button className='overflow-auto justify-around items-center m-4 text-sm' size="medium" variant="outlined" onClick={() => sendDataToParent(quizdata)}>Restart Quiz</Button>
-            <IconButton aria-label="share" onClick={handleOpen}>
+            <Button className='overflow-auto justify-around items-center m-4 text-base' size="large" variant="outlined" onClick={() => sendDataToParent(quizdata)}>Restart Quiz</Button>
+            <IconButton aria-label="share" size="large" onClick={handleOpen}>
               <ShareIcon />
             </IconButton>
         </CardActions>
         {open && (
           <div className="flex flex-wrap justify-center gap-2 p-4 border-t">
-            <Typography variant="body2" className="w-full text-center mb-2">
+            <Typography variant="body2" className="w-full text-center mb-2 text-base">
               Share your results:
             </Typography>
             <IconButton onClick={handleFacebookShare} aria-label="facebook" color="primary">
